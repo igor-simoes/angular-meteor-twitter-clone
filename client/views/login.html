@@ -1,0 +1,38 @@
+<ion-content scroll="false">
+    <div class="list" ng-show="login===false">
+        <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="user.name">
+        </label>
+        <label class="item item-input">
+            <input type="text" placeholder="Email" ng-model="user.email">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="user.password">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Confirm Password" ng-model="user.passwordCheck">
+        </label>
+        <button class="button button-block button-balanced" ng-click="register(user)" ng-disabled="!user.name || !user.email || !user.password || !user.passwordCheck">Register</button>
+    </div>
+
+    <div class="list" ng-show="login">
+        <label class="item item-input">
+            <input type="text" placeholder="Email" ng-model="userLogin.email">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="userLogin.password">
+        </label>
+        <button class="button button-block button-balanced" ng-click="logIn(userLogin)" ng-disabled="!userLogin.email || !userLogin.password">Log In</button>
+    </div>
+
+
+    <h1>{{$root.currentUser}}</h1>
+</ion-content>
+<div class="tabs">
+  <a class="tab-item" ng-click="showLogin()">
+    Log In
+  </a>
+  <a class="tab-item" ng-click="showRegister()">
+    Sign In
+  </a>
+</div>
